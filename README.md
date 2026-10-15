@@ -25,7 +25,7 @@ The portfolio demonstration calls the original cafe entities in production order
 sh test.sh
 ```
 
-This runs the original coursework JUnit suite. The original JUnit suite reports 30 of 31 tests passing. The remaining save test expects `data/engine_save_test.csv`, while the implementation writes the supplied relative filename in the working directory. The original tests also print zero marks for three unsupported command aliases. These are coursework checks, not comprehensive coverage of all behaviours.
+This runs the original coursework JUnit suite. On the first run, the script downloads the pinned JUnit console dependency from Maven Central using `curl`; subsequent runs reuse the local copy. An internet connection is required for the first download. The original JUnit suite reports 30 of 31 tests passing. The remaining save test expects `data/engine_save_test.csv`, while the implementation writes the supplied relative filename in the working directory. The original tests also print zero marks for three unsupported command aliases. These are coursework checks, not comprehensive coverage of all behaviours.
 
 ## Scope and limitations of the saved version
 
@@ -36,7 +36,7 @@ The original `Main.java` is empty, so the original `run.sh` does not start an in
 - `src/org/uob/a2/engine/`: generic engine and state.
 - `src/org/uob/a2/model/`: resource types and cafe entities.
 - `src/org/uob/a2/parser/`: commands and parser.
-- `test/`, `lib/`: original coursework tests and dependencies.
+- `test/`: original coursework tests. The test script downloads its JUnit dependency to `lib/`.
 - `examples/`, `demo.sh`: portfolio demonstration.
 
 Portfolio copy of my University of Birmingham Object Oriented Programming coursework, snapshot `3c6151f97ae6a980412e46a1e6e22d5730c1190e`. README, demonstration, ignore rules and test wrapper were added for this portfolio. Coursework scaffolding and supplied tests are included as context, not claimed as wholly original work. Compiled classes and notebook checkpoints are excluded.
